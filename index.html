@@ -353,10 +353,11 @@
             align-items: center;
             margin-top: 15px;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .game-logo img {
-            max-width: 180px;
+            max-width: 140px;
             height: auto;
             filter: drop-shadow(0 0 15px #00d4ff);
             transition: all 0.3s ease;
@@ -491,6 +492,36 @@
             transform: translateY(-5px) scale(1.05);
         }
 
+        /* BOTTOM BANNER SECTION */
+        .banner-section {
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
+            width: 100%;
+        }
+
+        .banner-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff;
+            border: 3px solid #00d4ff;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .banner-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff;
+        }
+
         /* FOOTER */
         footer {
             background: #000;
@@ -541,6 +572,9 @@
             }
             .info-card {
                 padding: 20px;
+            }
+            .game-logo img {
+                max-width: 100px;
             }
         }
     </style>
@@ -613,7 +647,7 @@
                     <div class="info-card">
                         <h3>🎮 Game</h3>
                         <div class="game-logo">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23ffd700' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='60' font-size='40' font-weight='bold' text-anchor='middle' fill='%23000'>P</text%3E%3C/svg%3E" alt="PUBG Mobile" style="width: 60px; margin-right: 10px;">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.85RoMB7_QHjmOcfZ6DiJjwHaHa%3Fpid%3DApi&f=1&ipt=149738cd8ebda19c9f0b87d6544094c45b8169b0789e8ebb6e70bf51644b8838&ipo=images" alt="PUBG Mobile Logo">
                             <span style="font-size: 1.1em; font-weight: bold;">PUBG Mobile</span>
                         </div>
                     </div>
@@ -647,6 +681,13 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM BANNER SECTION -->
+    <section class="banner-section">
+        <div class="banner-container">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.QPM6wKiSPH3lXuRJBPP9JAHaHa%3Fpid%3DApi&f=1&ipt=63a67a034f5091df2f37b58be19c3e7515220bafeec93f6d83274314dd530505&ipo=images" alt="EL CLASICO Banner">
         </div>
     </section>
 
