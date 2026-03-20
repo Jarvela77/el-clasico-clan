@@ -1,102 +1,477 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>EL CLASICO</title>
-  /* JERSEY SECTION */
-.jersey-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL CLASICO - PUBG Mobile Esports</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.jersey-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        body {
+            background: linear-gradient(135deg, #000000 0%, #0a0f2c 100%);
+            color: #00d4ff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-.jersey-showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1s ease-out;
-}
+        /* ANIMATED TEXT OPENING */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000000 0%, #001a4d 50%, #0a0f2c 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.jersey-showcase img {
-    max-width: 500px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff, inset 0 0 30px rgba(0, 212, 255, 0.2);
-    border: 3px solid #00d4ff;
-    transition: all 0.3s ease;
-    animation: slideInCard 0.8s ease-out;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 10%;
+            right: 5%;
+            animation: glow 4s ease-in-out infinite;
+        }
 
-.jersey-showcase img:hover {
-    transform: scale(1.05) rotateY(5deg);
-    box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff, inset 0 0 50px rgba(0, 212, 255, 0.3);
-}
+        @keyframes glow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
 
-@media (max-width: 768px) {
-    .jersey-showcase img {
-        max-width: 100%;
-    }
-}
-<style>
-body{background:#000;color:#fff;font-family:Arial;margin:0;padding:20px}
-header{background:linear-gradient(90deg,#0066ff,#00d4ff);padding:40px;text-align:center}
-h1{font-size:2.5em;margin:0}
-.motto{color:#ffff00;font-weight:bold}
-.container{max-width:1200px;margin:30px auto}
-section{background:#1a1a2e;padding:30px;margin:20px 0;border-left:5px solid #0066ff}
-h2{color:#00d4ff}
-.logo{text-align:center}
-.logo img{max-width:200px;border-radius:10px}
-.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.player{background:#0066ff;padding:20px;border-radius:5px}
-.player h3{color:#ffff00}
-footer{background:#0066ff;text-align:center;padding:20px;margin-top:30px}
-</style>
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-logo {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff;
+            animation: slideInDown 1.5s ease-out;
+            border: 3px solid #00d4ff;
+        }
+
+        .clan-tag {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00d4ff;
+            text-shadow: 0 0 20px #0066ff, 0 0 40px #00d4ff;
+            margin-bottom: 20px;
+            animation: slideInDown 1.5s ease-out;
+            letter-spacing: 3px;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 5em;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 30px #0066ff, 0 0 60px #00d4ff;
+            margin: 20px 0;
+            animation: slideInUp 1.8s ease-out;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .motto {
+            font-size: 1.8em;
+            color: #ffff00;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: fadeInDelay 2.5s ease-out;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
+        @keyframes fadeInDelay {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00d4ff;
+            animation: bounce 2s infinite;
+            font-size: 1.5em;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* TEAM INFO SECTION */
+        .team-info {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px #0066ff;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: rgba(0, 102, 255, 0.1);
+            border: 2px solid #0066ff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: slideInCard 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .info-card:nth-child(1) { animation-delay: 0.1s; }
+        .info-card:nth-child(2) { animation-delay: 0.3s; }
+        .info-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes slideInCard {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px #0066ff;
+            transform: translateY(-10px);
+        }
+
+        .info-card h3 {
+            color: #00d4ff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* PLAYERS SECTION */
+        .players-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
+        }
+
+        .players-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .player-card {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid #0066ff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: slideInCard 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .player-card:nth-child(1) { animation-delay: 0.2s; }
+        .player-card:nth-child(2) { animation-delay: 0.4s; }
+        .player-card:nth-child(3) { animation-delay: 0.6s; }
+        .player-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .player-card:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 102, 255, 0.2) 100%);
+            border-color: #00d4ff;
+            box-shadow: 0 0 30px #0066ff, inset 0 0 30px rgba(0, 212, 255, 0.1);
+            transform: translateY(-15px) scale(1.05);
+        }
+
+        .player-rank {
+            background: #0066ff;
+            color: #ffff00;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .player-card h3 {
+            color: #ffff00;
+            font-size: 1.5em;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .player-name {
+            color: #00d4ff;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .player-info {
+            color: #ccc;
+            font-size: 0.95em;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        /* JERSEY SECTION */
+        .jersey-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .jersey-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .jersey-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .jersey-showcase img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff, inset 0 0 30px rgba(0, 212, 255, 0.2);
+            border: 3px solid #00d4ff;
+            transition: all 0.3s ease;
+            animation: slideInCard 0.8s ease-out;
+        }
+
+        .jersey-showcase img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff, inset 0 0 50px rgba(0, 212, 255, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 2px solid #0066ff;
+            padding: 40px 20px;
+            text-align: center;
+            color: #00d4ff;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+            .clan-tag {
+                font-size: 1.8em;
+            }
+            .motto {
+                font-size: 1.2em;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+            .hero-logo {
+                max-width: 150px;
+            }
+            .jersey-showcase img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<h1>🎮 EL CLASICO 🎮</h1>
-<p class="motto">Pro Esport Players - Win Everything We Play!</p>
-</header>
-<div class="container">
-<section>
-<div class="logo">
-<img src=hm="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/655104123_1424195998882369_9085907642996935244_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=E_K16A_lz3oQ7kNvwG1qsW2&_nc_oc=AdpG1Pyw-TprnBCORkK05JPj-aGf8zPaNW7sJi4kSf9tgZ1iUFXPZwcOp1JLNCY4is9e5j9hruwLwYUuJlWF_AtB&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wE9oVc5ZGeCy1Al2b6s0CsrdtBt2bIZdmSYHdx-vkY2nQ&oe=69E4EC95">
+    <!-- HERO SECTION WITH ANIMATION -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/655104123_1424195998882369_9085907642996935244_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=E_K16A_lz3oQ7kNvwG1qsW2&_nc_oc=AdpG1Pyw-TprnBCORkK05JPj-aGf8zPaNW7sJi4kSf9tgZ1iUFXPZwcOp1JLNCY4is9e5j9hruwLwYUuJlWF_AtB&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wE9oVc5ZGeCy1Al2b6s0CsrdtBt2bIZdmSYHdx-vkY2nQ&oe=69E4EC95" alt="EL CLASICO Logo" class="hero-logo">
+            <div class="clan-tag">el</div>
+            <h1>EL CLASICO</h1>
+            <p class="motto">🎮 Pro Esport Players - Win Everything We Play 🎮</p>
+        </div>
+        <div class="scroll-indicator">↓ SCROLL ↓</div>
+    </section>
 
-  
-</div>
-<h2>About Our Clan</h2>
-<p><strong>Team Name:</strong> elCLASICO</p>
-<p><strong>Team Tag:</strong> el</p>
-<p><strong>Game:</strong> PUBG Mobile</p>
-</section>
-<section>
-<h2>🏆 Our Players</h2>
-<div class="players">
-<div class="player"><h3>Player 1</h3><p><strong>PUBG:</strong> elūKARLLL7<br><strong>Name:</strong> კარლო ცერცვაძე<br><strong>ID:</strong> 5724326165</p></div>
-<div class="player"><h3>Player 2</h3><p><strong>PUBG:</strong> elūkenww09<br><strong>Name:</strong> გიორგი კენჭიაშვილი<br><strong>ID:</strong> 5718519654</p></div>
-<div class="player"><h3>Player 3</h3><p><strong>PUBG:</strong> elūJ4RVELa77<br><strong>Name:</strong> გიორგი არველაძე<br><strong>ID:</strong> 51519185415</p></div>
-<div class="player"><h3>Player 4</h3><p><strong>PUBG:</strong> KRATOSxŪŪŪ7<br><strong>Name:</strong> დათო მჭედლიძე<br><strong>ID:</strong> 5237219224</p></div>
-      </section>
-
-    <!-- FOOTER -->
-    <footer>
-          <!-- JERSEY SECTION -->
-    <section class="jersey-section">
-        <div class="jersey-container">
-            <h2 class="section-title">Official Team Jersey</h2>
-            <div class="jersey-showcase">
-                <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/649275518_922515307169178_9177754305575791424_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_ohc=Pj2EC-CX43YQ7kNvwEWqTbR&_nc_oc=AdqaogK5uLhUKBXdh5g2wOQYvPCcpCFPx6INnzV2ZEhFoXfXJc7RzgeYc4tI7oQUuFMfThU6OD--IaNJOcs2y660&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wH_drJRfoGXCxphS3sDuHBWvyyH6S3qkneSRpVZydxPnQ&oe=69E4C4C2" alt="EL CLASICO Jersey">
+    <!-- TEAM INFO SECTION -->
+    <section class="team-info">
+        <h2 class="section-title">Team Overview</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎯 Team Name</h3>
+                <p>elCLASICO</p>
+            </div>
+            <div class="info-card">
+                <h3>🏷️ Team Tag</h3>
+                <p>el</p>
+            </div>
+            <div class="info-card">
+                <h3>🎮 Game</h3>
+                <p>PUBG Mobile</p>
             </div>
         </div>
     </section>
 
-</div>
-</section>
-</div>
-<footer><p>&copy; 2026 EL CLASICO - PUBG Mobile Esports 🏆</p></footer>
+    <!-- PLAYERS SECTION -->
+    <section class="players-section">
+        <div class="players-container">
+            <h2 class="section-title">Elite Squad</h2>
+            <div class="players-grid">
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-rank">PLAYER 1</div>
+                    <h3>elūKARLLL7</h3>
+                    <p class="player-name">კარლო ცერცვაძე</p>
+                    <p class="player-info"><strong>ID:</strong> 5724326165</p>
+                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-rank">PLAYER 2</div>
+                    <h3>elūkenww09</h3>
+                    <p class="player-name">გიორგი კენჭიაშვილი</p>
+                    <p class="player-info"><strong>ID:</strong> 5718519654</p>
+                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-rank">PLAYER 3</div>
+                    <h3>elūJ4RVELa77</h3>
+                    <p class="player-name">გიორგი არველაძე</p>
+                    <p class="player-info"><strong>ID:</strong> 51519185415</p>
+                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-rank">PLAYER 4</div>
+                    <h3>KRATOSxŪŪŪ7</h3>
+                    <p class="player-name">დათო მჭედლიძე</p>
+                    <p class="player-info"><strong>ID:</strong> 5237219224</p>
+                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JERSEY SECTION -->
+    <section class="jersey-section">
+        <div class="jersey-container">
+            <h2 class="section-title">Official Team Jersey</h2>
+            <div class="jersey-showcase">
+                <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/649275518_922515307169178_9177754305575791424_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_ohc=Pj2EC-CX43YQ7kNvwEWqTbR&_nc_oc=AdqaogK5uLhUKBXdh5g2wOQYvPCcpCFPx6INnzV2ZEhFoXfXJc7RzgeYc4tI7oQUuFMfThU6OD--IaNJOcs2y660&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wH_drJRfoGXCxphS3sDuHBWvyyH6S3qkneSRpVZydxPnQ&oe=69E4C4C2" alt="EL CLASICO Jersey" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EL CLASICO - PUBG Mobile Esports</p>
+        <p>🏆 Pro Players | Pro Results | Pro Esports 🏆</p>
+    </footer>
 </body>
 </html>
