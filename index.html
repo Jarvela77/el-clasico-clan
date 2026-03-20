@@ -492,36 +492,6 @@
             transform: translateY(-5px) scale(1.05);
         }
 
-        /* BOTTOM BANNER SECTION */
-        .banner-section {
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
-            width: 100%;
-        }
-
-        .banner-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .banner-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff;
-            border: 3px solid #00d4ff;
-            transition: all 0.3s ease;
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        .banner-container img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff;
-        }
-
         /* FOOTER */
         footer {
             background: #000;
@@ -535,6 +505,27 @@
         footer p {
             margin: 10px 0;
             font-size: 1.1em;
+        }
+
+        .footer-banner {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-banner img {
+            max-width: 280px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 30px #0066ff, 0 0 60px #00d4ff;
+            border: 2px solid #00d4ff;
+            transition: all 0.3s ease;
+        }
+
+        .footer-banner img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff;
         }
 
         /* RESPONSIVE */
@@ -575,6 +566,9 @@
             }
             .game-logo img {
                 max-width: 100px;
+            }
+            .footer-banner img {
+                max-width: 200px;
             }
         }
     </style>
@@ -684,17 +678,13 @@
         </div>
     </section>
 
-    <!-- BOTTOM BANNER SECTION -->
-    <section class="banner-section">
-        <div class="banner-container">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.QPM6wKiSPH3lXuRJBPP9JAHaHa%3Fpid%3DApi&f=1&ipt=63a67a034f5091df2f37b58be19c3e7515220bafeec93f6d83274314dd530505&ipo=images" alt="EL CLASICO Banner">
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 EL CLASICO - PUBG Mobile Esports</p>
         <p>🏆 Pro Players | Pro Results | Pro Esports 🏆</p>
+        <div class="footer-banner">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.mQm-YWb5g_xLCgP4l2nmsgHaEK%3Fpid%3DApi&f=1&ipt=e4a65a2357734e891a40c8f8d68be2ede4cebec1326971786f520fb9d9f7a2e8&ipo=images" alt="EL CLASICO Banner">
+        </div>
     </footer>
 </body>
 </html>
