@@ -241,6 +241,25 @@
             line-height: 1.6;
         }
 
+        .game-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .game-logo img {
+            max-width: 150px;
+            height: auto;
+            filter: drop-shadow(0 0 10px #00d4ff);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover .game-logo img {
+            filter: drop-shadow(0 0 20px #0066ff) drop-shadow(0 0 10px #00d4ff);
+            transform: scale(1.1);
+        }
+
         /* PLAYERS SECTION */
         .players-section {
             padding: 80px 20px;
@@ -399,8 +418,10 @@
             animation: slideInUp 0.8s ease-out;
         }
 
-        .social-icon {
-            font-size: 1.5em;
+        .discord-logo {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
         }
 
         .discord-btn {
@@ -413,19 +434,6 @@
         .discord-btn:hover {
             background: linear-gradient(135deg, #7289DA 0%, #5865F2 100%);
             box-shadow: 0 0 60px rgba(88, 101, 242, 0.8), 0 0 20px #00d4ff;
-            transform: translateY(-5px) scale(1.05);
-        }
-
-        .tiktok-btn {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #25F4EE;
-            box-shadow: 0 0 30px rgba(37, 244, 238, 0.3);
-            border-color: #25F4EE;
-        }
-
-        .tiktok-btn:hover {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-            box-shadow: 0 0 60px rgba(37, 244, 238, 0.6), 0 0 20px #00d4ff;
             transform: translateY(-5px) scale(1.05);
         }
 
@@ -508,7 +516,9 @@
             </div>
             <div class="info-card">
                 <h3>🎮 Game</h3>
-                <p>PUBG Mobile</p>
+                <div class="game-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PUBG_Mobile_logo.png/220px-PUBG_Mobile_logo.png" alt="PUBG Mobile Logo">
+                </div>
             </div>
         </div>
     </section>
@@ -575,10 +585,10 @@
                 <p class="discord-text">Connect with your teammates, share strategies, and stay updated with clan news!</p>
                 <div class="social-buttons">
                     <a href="https://discord.gg/kgYP7HEa" target="_blank" class="social-btn discord-btn">
-                        <span class="social-icon">💬</span> DISCORD
-                    </a>
-                    <a href="https://www.tiktok.com/@j4rvelx?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn tiktok-btn">
-                        <span class="social-icon">🎵</span> TIKTOK
+                        <svg class="discord-logo" viewBox="0 0 127.14 96.36" width="24" height="24" fill="currentColor">
+                            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.43,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11A68.58,68.58,0,0,1,23.06,78.3a68.8,68.8,0,0,0,5.63-4.47c35.35,16.48,73.82,16.25,108.19,0a57.59,57.59,0,0,0,5.69,4.84A77.62,77.62,0,0,0,94.56,85.238a77.43,77.43,0,0,0,6.89,11.1A105.58,105.58,0,0,0,126.6,80.21h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                        </svg>
+                        DISCORD
                     </a>
                 </div>
             </div>
