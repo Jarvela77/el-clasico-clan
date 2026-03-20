@@ -160,19 +160,26 @@
             }
         }
 
-        /* TEAM INFO SECTION */
-        .team-info {
+        /* TEAM INFO & ROSTER SECTION */
+        .team-section {
             padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
             background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
             width: 100%;
+        }
+
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
         }
 
         .section-title {
             font-size: 2.5em;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: #00d4ff;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -189,32 +196,56 @@
             }
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+        /* LEFT SIDE - ROSTER */
+        .roster-side {
+            animation: slideInLeft 1s ease-out;
         }
 
-        .info-card {
-            background: rgba(0, 102, 255, 0.1);
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .roster-title {
+            font-size: 2.2em;
+            color: #ffff00;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px #ffff00;
+        }
+
+        .players-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .player-item {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
             border: 2px solid #0066ff;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
             transition: all 0.3s ease;
             animation: slideInCard 0.8s ease-out forwards;
             opacity: 0;
         }
 
-        .info-card:nth-child(1) { animation-delay: 0.1s; }
-        .info-card:nth-child(2) { animation-delay: 0.3s; }
-        .info-card:nth-child(3) { animation-delay: 0.5s; }
+        .player-item:nth-child(1) { animation-delay: 0.1s; }
+        .player-item:nth-child(2) { animation-delay: 0.2s; }
+        .player-item:nth-child(3) { animation-delay: 0.3s; }
+        .player-item:nth-child(4) { animation-delay: 0.4s; }
 
         @keyframes slideInCard {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -222,115 +253,118 @@
             }
         }
 
-        .info-card:hover {
-            background: rgba(0, 212, 255, 0.2);
+        .player-item:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 102, 255, 0.2) 100%);
             border-color: #00d4ff;
-            box-shadow: 0 0 20px #0066ff;
-            transform: translateY(-10px);
+            box-shadow: 0 0 30px #0066ff;
+            transform: translateX(10px);
         }
 
-        .info-card h3 {
+        .player-rank-number {
+            background: #0066ff;
+            color: #ffff00;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .player-item h3 {
+            color: #ffff00;
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .player-name-geo {
             color: #00d4ff;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            font-size: 1em;
+            margin-bottom: 8px;
+            font-style: italic;
         }
 
-        .info-card p {
-            font-size: 1.1em;
-            line-height: 1.6;
+        .player-id {
+            color: #ccc;
+            font-size: 0.95em;
+            margin: 5px 0;
         }
 
-        .game-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
+        /* RIGHT SIDE - TEAM INFO */
+        .info-side {
+            animation: slideInRight 1s ease-out;
         }
 
-        .game-logo img {
-            max-width: 150px;
-            height: auto;
-            filter: drop-shadow(0 0 10px #00d4ff);
-            transition: all 0.3s ease;
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .info-card:hover .game-logo img {
-            filter: drop-shadow(0 0 20px #0066ff) drop-shadow(0 0 10px #00d4ff);
-            transform: scale(1.1);
-        }
-
-        /* PLAYERS SECTION */
-        .players-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
-            width: 100%;
-        }
-
-        .players-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .players-grid {
+        .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 30px;
         }
 
-        .player-card {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+        .info-card {
+            background: rgba(0, 102, 255, 0.1);
             border: 2px solid #0066ff;
             border-radius: 15px;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
             transition: all 0.3s ease;
             animation: slideInCard 0.8s ease-out forwards;
             opacity: 0;
         }
 
-        .player-card:nth-child(1) { animation-delay: 0.2s; }
-        .player-card:nth-child(2) { animation-delay: 0.4s; }
-        .player-card:nth-child(3) { animation-delay: 0.6s; }
-        .player-card:nth-child(4) { animation-delay: 0.8s; }
+        .info-card:nth-child(1) { animation-delay: 0.5s; }
+        .info-card:nth-child(2) { animation-delay: 0.6s; }
+        .info-card:nth-child(3) { animation-delay: 0.7s; }
 
-        .player-card:hover {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 102, 255, 0.2) 100%);
+        .info-card:hover {
+            background: rgba(0, 212, 255, 0.2);
             border-color: #00d4ff;
-            box-shadow: 0 0 30px #0066ff, inset 0 0 30px rgba(0, 212, 255, 0.1);
-            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 0 30px #0066ff;
+            transform: translateY(-10px);
         }
 
-        .player-rank {
-            background: #0066ff;
-            color: #ffff00;
-            padding: 5px 15px;
-            border-radius: 20px;
-            display: inline-block;
+        .info-card h3 {
+            color: #00d4ff;
+            font-size: 1.8em;
             margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-
-        .player-card h3 {
-            color: #ffff00;
-            font-size: 1.5em;
-            margin: 10px 0;
             text-transform: uppercase;
         }
 
-        .player-name {
-            color: #00d4ff;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            font-style: italic;
+        .info-card p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #fff;
         }
 
-        .player-info {
-            color: #ccc;
-            font-size: 0.95em;
-            margin: 8px 0;
-            line-height: 1.6;
+        .game-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
+
+        .game-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 15px #00d4ff);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover .game-logo img {
+            filter: drop-shadow(0 0 25px #0066ff) drop-shadow(0 0 15px #00d4ff);
+            transform: scale(1.1);
         }
 
         /* JERSEY SECTION */
@@ -343,6 +377,16 @@
         .jersey-container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .jersey-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px #0066ff;
         }
 
         .jersey-showcase {
@@ -378,6 +422,16 @@
         .discord-container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .discord-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px #0066ff;
         }
 
         .discord-content {
@@ -453,39 +507,40 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .team-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            h1 {
+                font-size: 3.5em;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 3em;
+                font-size: 2.5em;
             }
             .clan-tag {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
             .motto {
-                font-size: 1.2em;
+                font-size: 1em;
             }
             .section-title {
                 font-size: 1.8em;
             }
             .hero-logo {
-                max-width: 150px;
+                max-width: 120px;
             }
-            .jersey-showcase img {
-                max-width: 100%;
+            .roster-title {
+                font-size: 1.6em;
             }
-            .discord-text {
-                font-size: 1.1em;
+            .player-item {
+                padding: 15px;
             }
-            .social-btn {
-                padding: 15px 30px;
-                font-size: 0.95em;
-            }
-            .social-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .social-btn {
-                width: 100%;
-                justify-content: center;
+            .info-card {
+                padding: 20px;
             }
         }
     </style>
@@ -502,66 +557,66 @@
         <div class="scroll-indicator">↓ SCROLL ↓</div>
     </section>
 
-    <!-- TEAM INFO SECTION -->
-    <section class="team-info">
-        <h2 class="section-title">Team Overview</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>🎯 Team Name</h3>
-                <p>elCLASICO</p>
-            </div>
-            <div class="info-card">
-                <h3>🏷️ Team Tag</h3>
-                <p>el</p>
-            </div>
-            <div class="info-card">
-                <h3>🎮 Game</h3>
-                <div class="game-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PUBG_Mobile_logo.png/220px-PUBG_Mobile_logo.png" alt="PUBG Mobile Logo">
+    <!-- TEAM INFO & ROSTER SECTION -->
+    <section class="team-section">
+        <div class="team-container">
+            <!-- LEFT SIDE - ROSTER -->
+            <div class="roster-side">
+                <h2 class="roster-title">🏆 Elite Squad</h2>
+                <div class="players-list">
+                    <!-- Player 1 -->
+                    <div class="player-item">
+                        <div class="player-rank-number">PLAYER 1</div>
+                        <h3>elūKARLLL7</h3>
+                        <p class="player-name-geo">კარლო ცერცვაძე</p>
+                        <p class="player-id"><strong>ID:</strong> 5724326165</p>
+                    </div>
+
+                    <!-- Player 2 -->
+                    <div class="player-item">
+                        <div class="player-rank-number">PLAYER 2</div>
+                        <h3>elūkenww09</h3>
+                        <p class="player-name-geo">გიორგი კენჭიაშვილი</p>
+                        <p class="player-id"><strong>ID:</strong> 5718519654</p>
+                    </div>
+
+                    <!-- Player 3 -->
+                    <div class="player-item">
+                        <div class="player-rank-number">PLAYER 3</div>
+                        <h3>elūJ4RVELa77</h3>
+                        <p class="player-name-geo">გიორგი არველაძე</p>
+                        <p class="player-id"><strong>ID:</strong> 51519185415</p>
+                    </div>
+
+                    <!-- Player 4 -->
+                    <div class="player-item">
+                        <div class="player-rank-number">PLAYER 4</div>
+                        <h3>KRATOSxŪŪŪ7</h3>
+                        <p class="player-name-geo">დათო მჭედლიძე</p>
+                        <p class="player-id"><strong>ID:</strong> 5237219224</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- PLAYERS SECTION -->
-    <section class="players-section">
-        <div class="players-container">
-            <h2 class="section-title">Elite Squad</h2>
-            <div class="players-grid">
-                <!-- Player 1 -->
-                <div class="player-card">
-                    <div class="player-rank">PLAYER 1</div>
-                    <h3>elūKARLLL7</h3>
-                    <p class="player-name">კარლო ცერცვაძე</p>
-                    <p class="player-info"><strong>ID:</strong> 5724326165</p>
-                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
-                </div>
-
-                <!-- Player 2 -->
-                <div class="player-card">
-                    <div class="player-rank">PLAYER 2</div>
-                    <h3>elūkenww09</h3>
-                    <p class="player-name">გიორგი კენჭიაშვილი</p>
-                    <p class="player-info"><strong>ID:</strong> 5718519654</p>
-                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
-                </div>
-
-                <!-- Player 3 -->
-                <div class="player-card">
-                    <div class="player-rank">PLAYER 3</div>
-                    <h3>elūJ4RVELa77</h3>
-                    <p class="player-name">გიორგი არველაძე</p>
-                    <p class="player-info"><strong>ID:</strong> 51519185415</p>
-                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
-                </div>
-
-                <!-- Player 4 -->
-                <div class="player-card">
-                    <div class="player-rank">PLAYER 4</div>
-                    <h3>KRATOSxŪŪŪ7</h3>
-                    <p class="player-name">დათო მჭედლიძე</p>
-                    <p class="player-info"><strong>ID:</strong> 5237219224</p>
-                    <p class="player-info"><strong>Role:</strong> Elite Pro</p>
+            <!-- RIGHT SIDE - TEAM INFO -->
+            <div class="info-side">
+                <h2 class="section-title">Team Overview</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🎯 Team Name</h3>
+                        <p>elCLASICO</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏷️ Team Tag</h3>
+                        <p>el</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎮 Game</h3>
+                        <div class="game-logo">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23ffd700' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='60' font-size='40' font-weight='bold' text-anchor='middle' fill='%23000'>P</text%3E%3C/svg%3E" alt="PUBG Mobile" style="width: 60px; margin-right: 10px;">
+                            <span style="font-size: 1.1em; font-weight: bold;">PUBG Mobile</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -570,7 +625,7 @@
     <!-- JERSEY SECTION -->
     <section class="jersey-section">
         <div class="jersey-container">
-            <h2 class="section-title">Official Team Jersey</h2>
+            <h2 class="jersey-title">Official Team Jersey</h2>
             <div class="jersey-showcase">
                 <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/649275518_922515307169178_9177754305575791424_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_ohc=Pj2EC-CX43YQ7kNvwEWqTbR&_nc_oc=AdqaogK5uLhUKBXdh5g2wOQYvPCcpCFPx6INnzV2ZEhFoXfXJc7RzgeYc4tI7oQUuFMfThU6OD--IaNJOcs2y660&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wH_drJRfoGXCxphS3sDuHBWvyyH6S3qkneSRpVZydxPnQ&oe=69E4C4C2" alt="EL CLASICO Jersey" loading="lazy">
             </div>
@@ -580,7 +635,7 @@
     <!-- DISCORD & SOCIAL SECTION -->
     <section class="discord-section">
         <div class="discord-container">
-            <h2 class="section-title">Join Our Community</h2>
+            <h2 class="discord-title">Join Our Community</h2>
             <div class="discord-content">
                 <p class="discord-text">Connect with your teammates, share strategies, and stay updated with clan news!</p>
                 <div class="social-buttons">
