@@ -166,6 +166,7 @@
             max-width: 1200px;
             margin: 0 auto;
             background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+            width: 100%;
         }
 
         .section-title {
@@ -244,6 +245,7 @@
         .players-section {
             padding: 80px 20px;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
+            width: 100%;
         }
 
         .players-container {
@@ -316,6 +318,7 @@
         .jersey-section {
             padding: 80px 20px;
             background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+            width: 100%;
         }
 
         .jersey-container {
@@ -346,6 +349,86 @@
             box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff, inset 0 0 50px rgba(0, 212, 255, 0.3);
         }
 
+        /* DISCORD & SOCIAL SECTION */
+        .discord-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 20, 60, 0.5) 100%);
+            width: 100%;
+        }
+
+        .discord-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .discord-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .discord-text {
+            font-size: 1.3em;
+            color: #00d4ff;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .social-icon {
+            font-size: 1.5em;
+        }
+
+        .discord-btn {
+            background: linear-gradient(135deg, #5865F2 0%, #7289DA 100%);
+            color: #fff;
+            box-shadow: 0 0 30px rgba(88, 101, 242, 0.5);
+            border-color: #7289DA;
+        }
+
+        .discord-btn:hover {
+            background: linear-gradient(135deg, #7289DA 0%, #5865F2 100%);
+            box-shadow: 0 0 60px rgba(88, 101, 242, 0.8), 0 0 20px #00d4ff;
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .tiktok-btn {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #25F4EE;
+            box-shadow: 0 0 30px rgba(37, 244, 238, 0.3);
+            border-color: #25F4EE;
+        }
+
+        .tiktok-btn:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            box-shadow: 0 0 60px rgba(37, 244, 238, 0.6), 0 0 20px #00d4ff;
+            transform: translateY(-5px) scale(1.05);
+        }
+
         /* FOOTER */
         footer {
             background: #000;
@@ -353,6 +436,7 @@
             padding: 40px 20px;
             text-align: center;
             color: #00d4ff;
+            width: 100%;
         }
 
         footer p {
@@ -379,6 +463,21 @@
             }
             .jersey-showcase img {
                 max-width: 100%;
+            }
+            .discord-text {
+                font-size: 1.1em;
+            }
+            .social-btn {
+                padding: 15px 30px;
+                font-size: 0.95em;
+            }
+            .social-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .social-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -464,6 +563,24 @@
             <h2 class="section-title">Official Team Jersey</h2>
             <div class="jersey-showcase">
                 <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/649275518_922515307169178_9177754305575791424_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_ohc=Pj2EC-CX43YQ7kNvwEWqTbR&_nc_oc=AdqaogK5uLhUKBXdh5g2wOQYvPCcpCFPx6INnzV2ZEhFoXfXJc7RzgeYc4tI7oQUuFMfThU6OD--IaNJOcs2y660&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wH_drJRfoGXCxphS3sDuHBWvyyH6S3qkneSRpVZydxPnQ&oe=69E4C4C2" alt="EL CLASICO Jersey" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCORD & SOCIAL SECTION -->
+    <section class="discord-section">
+        <div class="discord-container">
+            <h2 class="section-title">Join Our Community</h2>
+            <div class="discord-content">
+                <p class="discord-text">Connect with your teammates, share strategies, and stay updated with clan news!</p>
+                <div class="social-buttons">
+                    <a href="https://discord.gg/kgYP7HEa" target="_blank" class="social-btn discord-btn">
+                        <span class="social-icon">💬</span> DISCORD
+                    </a>
+                    <a href="https://www.tiktok.com/@j4rvelx?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn tiktok-btn">
+                        <span class="social-icon">🎵</span> TIKTOK
+                    </a>
+                </div>
             </div>
         </div>
     </section>
