@@ -2,6 +2,44 @@
 <html>
 <head>
 <title>EL CLASICO</title>
+  /* JERSEY SECTION */
+.jersey-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(0, 20, 60, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.jersey-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jersey-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.jersey-showcase img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 50px #0066ff, 0 0 100px #00d4ff, inset 0 0 30px rgba(0, 212, 255, 0.2);
+    border: 3px solid #00d4ff;
+    transition: all 0.3s ease;
+    animation: slideInCard 0.8s ease-out;
+}
+
+.jersey-showcase img:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 0 80px #0066ff, 0 0 150px #00d4ff, inset 0 0 50px rgba(0, 212, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .jersey-showcase img {
+        max-width: 100%;
+    }
+}
 <style>
 body{background:#000;color:#fff;font-family:Arial;margin:0;padding:20px}
 header{background:linear-gradient(90deg,#0066ff,#00d4ff);padding:40px;text-align:center}
@@ -42,6 +80,20 @@ footer{background:#0066ff;text-align:center;padding:20px;margin-top:30px}
 <div class="player"><h3>Player 2</h3><p><strong>PUBG:</strong> elūkenww09<br><strong>Name:</strong> გიორგი კენჭიაშვილი<br><strong>ID:</strong> 5718519654</p></div>
 <div class="player"><h3>Player 3</h3><p><strong>PUBG:</strong> elūJ4RVELa77<br><strong>Name:</strong> გიორგი არველაძე<br><strong>ID:</strong> 51519185415</p></div>
 <div class="player"><h3>Player 4</h3><p><strong>PUBG:</strong> KRATOSxŪŪŪ7<br><strong>Name:</strong> დათო მჭედლიძე<br><strong>ID:</strong> 5237219224</p></div>
+      </section>
+
+    <!-- FOOTER -->
+    <footer>
+          <!-- JERSEY SECTION -->
+    <section class="jersey-section">
+        <div class="jersey-container">
+            <h2 class="section-title">Official Team Jersey</h2>
+            <div class="jersey-showcase">
+                <img src="https://scontent.fsxb1-1.fna.fbcdn.net/v/t1.15752-9/649275518_922515307169178_9177754305575791424_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_ohc=Pj2EC-CX43YQ7kNvwEWqTbR&_nc_oc=AdqaogK5uLhUKBXdh5g2wOQYvPCcpCFPx6INnzV2ZEhFoXfXJc7RzgeYc4tI7oQUuFMfThU6OD--IaNJOcs2y660&_nc_zt=23&_nc_ht=scontent.fsxb1-1.fna&_nc_ss=7a30f&oh=03_Q7cD4wH_drJRfoGXCxphS3sDuHBWvyyH6S3qkneSRpVZydxPnQ&oe=69E4C4C2" alt="EL CLASICO Jersey">
+            </div>
+        </div>
+    </section>
+
 </div>
 </section>
 </div>
